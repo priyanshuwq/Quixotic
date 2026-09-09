@@ -1,0 +1,26 @@
+# TTS Configuration - Festival-based Synthesis for Tribal Languages
+
+model:
+  engine: "festival"
+  voice_default: "kal_diphone"
+  sample_rate: 22050
+
+languages:
+  ho:
+    voice: "ho_voice"
+    phoneme_set: "ho_phonemes"
+  mnj:
+    voice: "mnj_voice"
+    phoneme_set: "mnj_phonemes"
+  sat:
+    voice: "sat_voice"
+    phoneme_set: "sat_phonemes"
+
+synthesis:
+  duration_stretch: 1.0
+  pitch_mean: 100
+  pitch_std: 20
+
+output:
+  format: "wav"
+  bit_depth: 16

@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Model files (large files - use Git LFS)
+models/checkpoints/*.pt
+models/checkpoints/*.pth
+models/checkpoints/*.bin
+models/exported/*.onnx
+models/exported/*.tflite
+models/pretrained/*.pt
+models/pretrained/*.bin
+models/quantized/*.onnx
+
+# Data files (large files - use Git LFS)
+data/raw/
+data/processed/
+*.csv
+*.tsv
+*.parquet
+
+# Logs and outputs
+outputs/logs/
+outputs/plots/
+outputs/metrics/
+training/logs/
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Android
+mobile/android/.gradle/
+mobile/android/app/build/
+mobile/android/local.properties
