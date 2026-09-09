@@ -1,70 +1,50 @@
-# BhashaSetu NMT Training Configuration
-# Hindi to Tribal Language Translation (Ho/Mundari/Santhali)
+# Training Configuration - NMT Model (MarianMT/NLLB-200)
 
 model:
-  name: "distilbert-base-multilingual-cased"
-  backbone: "google/madlad400-3b-bpe"
+  name: "Helsinki-NLP/opus-mt-hi"
   max_length: 128
   vocab_size: 250003
-  d_model: 768
-  num_heads: 12
+  d_model: 512
+  num_heads: 8
   num_encoder_layers: 6
   num_decoder_layers: 6
   dropout: 0.1
   label_smoothing: 0.1
 
 data:
-  source_lang: "hi"  # Hindi
-  target_lang: "sat"  # Santhali (change to ho/mnj for other languages)
+  source_lang: "hi"
+  target_lang: "sat"
   train_file: "data/processed/train.parquet"
   val_file: "data/processed/val.parquet"
   test_file: "data/processed/test.parquet"
   max_seq_length: 128
   batch_size: 32
-  num_workers: 4
 
 training:
   epochs: 50
   learning_rate: 0.001
   weight_decay: 0.01
   warmup_steps: 4000
-  scheduler: "triangular"  # triangular LR schedule
+  scheduler: "triangular"
   optimizer: "adamw"
   gradient_accumulation_steps: 2
-  max_grad_norm: 1.0
   fp16: true
   seed: 42
-
-  # Checkpointing
-  save_strategy: "epoch"
-  save_total_limit: 3
-  output_dir: "models/checkpoints"
-  logging_dir: "training/logs"
-  logging_steps: 100
-
-  # Evaluation
-  eval_strategy: "epoch"
-  eval_steps: 500
-  metric_for_best_model: "bleu"
-  greater_is_better: true
 
 quantization:
   enabled: true
   format: "onnx"
   quantize_dynamic: true
   optimize_for_cpu: true
-  output_dir: "models/quantized"
+  output_dir: "models/exported"
 
 languages:
   - code: "ho"
     name: "Ho"
-    family: "Munda"
     speakers: 1400000
   - code: "mnj"
     name: "Mundari"
-    family: "Munda"
     speakers: 2000000
   - code: "sat"
     name: "Santhali"
-    family: "Munda"
     speakers: 7400000

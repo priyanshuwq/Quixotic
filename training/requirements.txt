@@ -1,0 +1,15 @@
+# Python dependencies for model training
+torch>=2.0.0
+transformers>=4.35.0
+datasets>=2.14.0
+tokenizers>=0.15.0
+onnx>=1.15.0
+onnxruntime>=1.16.0
+optimum>=1.14.0
+sacrebleu>=2.3.0
+nltk>=3.8.0
+pandas>=2.1.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+tqdm>=4.66.0
+pyyaml>=6.0.0

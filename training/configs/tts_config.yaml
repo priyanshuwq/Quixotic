@@ -1,26 +1,21 @@
-# TTS Configuration - Festival-based Synthesis for Tribal Languages
+# Training Configuration - TTS Model (Piper TTS / VITS)
 
 model:
-  engine: "festival"
-  voice_default: "kal_diphone"
+  engine: "piper"
   sample_rate: 22050
 
 languages:
   ho:
-    voice: "ho_voice"
-    phoneme_set: "ho_phonemes"
+    model_path: "models/pretrained/piper_ho.onnx"
+    sample_rate: 22050
   mnj:
-    voice: "mnj_voice"
-    phoneme_set: "mnj_phonemes"
+    model_path: "models/pretrained/piper_mnj.onnx"
+    sample_rate: 22050
   sat:
-    voice: "sat_voice"
-    phoneme_set: "sat_phonemes"
-
-synthesis:
-  duration_stretch: 1.0
-  pitch_mean: 100
-  pitch_std: 20
+    model_path: "models/pretrained/piper_sat.onnx"
+    sample_rate: 22050
 
 output:
-  format: "wav"
-  bit_depth: 16
+  format: "onnx"
+  quantize_dynamic: true
+  optimize_for_cpu: true

@@ -1,15 +1,13 @@
-# ASR Configuration - WHISPER-tiny for Hindi/Tribal Languages
+# Training Configuration - ASR Model (WHISPER-Tiny)
 
 model:
   name: "openai/whisper-tiny"
   language: "hi"
   task: "transcribe"
-  max_length: 30  # seconds
 
 audio:
   sample_rate: 16000
   chunk_length: 30
-  format: "wav"
 
 inference:
   beam_size: 5
@@ -20,6 +18,6 @@ inference:
   no_speech_threshold: 0.6
 
 output:
-  format: "json"
-  include_timestamps: true
-  include_segments: true
+  format: "onnx"
+  quantize_dynamic: true
+  optimize_for_cpu: true
