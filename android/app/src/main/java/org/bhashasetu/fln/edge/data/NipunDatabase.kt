@@ -6,8 +6,15 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [NipunMilestone::class, ExtractiveResource::class, LessonScript::class, Worksheet::class],
-    version = 1,
+    entities = [
+        NipunMilestone::class,
+        ExtractiveResource::class,
+        LessonScript::class,
+        Worksheet::class,
+        Flashcard::class,
+        PhrasebookEntry::class
+    ],
+    version = 2,
     exportSchema = false
 )
 abstract class NipunDatabase : RoomDatabase() {
@@ -23,7 +30,7 @@ abstract class NipunDatabase : RoomDatabase() {
                     context.applicationContext,
                     NipunDatabase::class.java,
                     "nipun_database"
-                ).build()
+                ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 instance
             }

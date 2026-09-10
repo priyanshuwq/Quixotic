@@ -3,40 +3,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:background="#E3F2FD">
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Student Mode"
-        android:textSize="24sp"
+        android:text="@string/student_mode"
+        android:textSize="28sp"
         android:textStyle="bold"
+        android:textColor="#1565C0"
         android:gravity="center"
         android:layout_marginBottom="24dp"/>
 
-    <TextView
-        android:id="@+id/tvLessonContent"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Lesson content"
-        android:textSize="18sp"
-        android:padding="16dp"
-        android:background="#F5F5F5"
-        android:layout_marginBottom="16dp"/>
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="20dp"
+        android:layout_marginBottom="16dp">
 
-    <Button
-        android:id="@+id/btnPlayAudio"
+        <TextView
+            android:id="@+id/tvLessonTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lesson_title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tvLessonContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lesson_content_placeholder"
+            android:textSize="24sp"
+            android:textColor="#1976D2"
+            android:lineSpacingExtra="8dp"
+            android:minHeight="120dp"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Play Audio"
-        android:layout_marginBottom="8dp"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btnPlayAudio"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:text="@string/play_audio"
+            android:textSize="18sp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnReplayAudio"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:text="@string/replay"
+            android:textSize="18sp"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnNextLesson"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Next Lesson"/>
+        android:layout_height="56dp"
+        android:text="@string/next_lesson"
+        android:textSize="16sp"
+        android:backgroundTint="#1976D2"
+        android:textColor="#FFFFFF"/>
 
 </LinearLayout>

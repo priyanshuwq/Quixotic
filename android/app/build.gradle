@@ -49,12 +49,11 @@ android {
 }
 
 dependencies {
-    // ONNX Runtime
-    implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.18.0'
+    // ONNX Runtime Mobile
+    implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.22.0'
 
     // Room Database
     implementation 'androidx.room:room-runtime:2.6.1'
-    annotationProcessor 'androidx.room:room-compiler:2.6.1'
     kapt 'androidx.room:room-compiler:2.6.1'
 
     // Coroutines
@@ -70,6 +69,9 @@ dependencies {
 
     // Media
     implementation 'androidx.media:media:1.7.0'
+
+    // JSON parsing
+    implementation 'org.json:json:20231013'
 
     // Testing
     testImplementation 'junit:junit:4.13.2'

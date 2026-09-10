@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Green circle background -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M24,24m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0"/>
+    <!-- Bridge symbol (B for BhashaSetu) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14,12 L14,36 L22,36 C26,36 30,34 30,30 C30,26 26,26 22,26 L22,24 L26,24 C30,24 32,22 32,18 C32,14 28,12 22,12 Z M16,14 L22,14 C26,14 28,16 28,18 C28,22 26,22 22,22 L16,22 Z"/>
+</vector>

@@ -3,45 +3,142 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Teacher Mode"
+        android:text="@string/teacher_mode"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="#1976D2"
         android:gravity="center"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/translation_direction"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/tvStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ready to translate"
+        android:text="@string/ready"
         android:textSize="16sp"
+        android:textColor="#333333"
         android:layout_marginBottom="16dp"/>
 
-    <TextView
-        android:id="@+id/tvLatency"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hindi_source"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvHindiText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/waiting_speech"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:minHeight="60dp"
+            android:layout_marginBottom="16dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/santali_output"
+            android:textSize="12sp"
+            android:textColor="#1976D2"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvSantaliText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/translation_appears"
+            android:textSize="20sp"
+            android:textColor="#1976D2"
+            android:textStyle="bold"
+            android:minHeight="60dp"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Latency: 0ms"
-        android:textSize="14sp"
-        android:layout_marginBottom="24dp"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvLatency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/latency_default"
+            android:textSize="12sp"
+            android:textColor="#666666"/>
+
+        <TextView
+            android:id="@+id/tvModelStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/models_loading"
+            android:textSize="12sp"
+            android:textColor="#FF6F00"
+            android:gravity="end"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnStartTranslation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Start Translation"
+        android:layout_height="56dp"
+        android:text="@string/start_translation"
+        android:textSize="16sp"
+        android:backgroundTint="#1976D2"
+        android:textColor="#FFFFFF"
         android:layout_marginBottom="8dp"/>
 
     <Button
         android:id="@+id/btnStopTranslation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Stop Translation"/>
+        android:layout_height="56dp"
+        android:text="@string/stop"
+        android:textSize="16sp"
+        android:enabled="false"
+        android:layout_marginBottom="8dp"/>
 
 </LinearLayout>

@@ -47,3 +47,24 @@ data class Worksheet(
     val gradeLevel: Int,
     val subject: String
 )
+
+@Entity(tableName = "flashcards")
+data class Flashcard(
+    @PrimaryKey val flashcardId: String,
+    val milestoneId: String,
+    val conceptCategory: String,
+    val hindiLabel: String,
+    val santaliLabel: String,
+    val imagePath: String,
+    val audioPath: String,
+    val gradeLevel: Int
+)
+
+@Entity(tableName = "phrasebook")
+data class PhrasebookEntry(
+    @PrimaryKey val phraseId: String,
+    val hindiPhrase: String,
+    val santaliPhrase: String,
+    val category: String,
+    val isHighConfidence: Boolean = true
+)
